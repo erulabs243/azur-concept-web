@@ -14,11 +14,13 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.4.1",
     "@payloadcms/db-postgres": "beta",
     "@payloadcms/next": "beta",
     "@payloadcms/plugin-cloud": "beta",
     "@payloadcms/richtext-lexical": "beta",
     "cross-env": "^7.0.3",
+    "framer-motion": "^11.2.10",
     "graphql": "^16.8.1",
     "next": "15.0.0-rc.0",
     "payload": "beta",
