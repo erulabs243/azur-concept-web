@@ -1,7 +1,9 @@
 import type { CollectionConfig } from "payload/types";
 
 import { Media } from "./Media";
-import { Users } from "./Users";
+import { createdByField, publishedOnField, slugField } from "@/fields";
+import { createdByHook } from "@/hooks";
+import { PostCategories } from "./PostCategories";
 
 export const Posts = {
 	slug: "posts",
@@ -37,6 +39,13 @@ export const Posts = {
 							localized: true,
 							required: true,
 						},
+						{
+							name: "categories",
+							type: "relationship",
+							relationTo: PostCategories.slug,
+							hasMany: true,
+							label: "Categories",
+						},
 					],
 				},
 				{
@@ -53,51 +62,35 @@ export const Posts = {
 				},
 			],
 		},
-		{
-			name: "slug",
-			type: "text",
-			label: "Slug",
-			required: true,
-			localized: true,
-			unique: true,
-			admin: {
-				position: "sidebar",
-			},
-		},
-		{
-			name: "publishedOn",
-			type: "date",
-			admin: {
-				position: "sidebar",
-				date: {
-					pickerAppearance: "dayAndTime",
-				},
-			},
-		},
-		{
-			name: "createdBy",
-			type: "relationship",
-			relationTo: Users.slug,
-			access: {
-				update: () => false,
-			},
-			admin: {
-				readOnly: true,
-				position: "sidebar",
-				condition: (data) => Boolean(data?.createdBy),
-			},
-		},
+		// {
+		// 	name: "slug",
+		// 	type: "text",
+		// 	label: "Slug",
+		// 	required: true,
+		// 	localized: true,
+		// 	unique: true,
+		// 	admin: {
+		// 		position: "sidebar",
+		// 	},
+		// },
+		// {
+		// 	name: "publishedOn",
+		// 	type: "date",
+		// 	admin: {
+		// 		position: "sidebar",
+		// 		date: {
+		// 			pickerAppearance: "dayAndTime",
+		// 		},
+		// 	},
+		// },
+		slugField("title"),
+		publishedOnField,
+		createdByField,
 	],
 	hooks: {
-		beforeChange: [
-			({ req, operation, data }) => {
-				if (operation === "create") {
-					if (req.user) {
-						data.createdBy = req.user.id;
-						return data;
-					}
-				}
-			},
-		],
+		beforeChange: [createdByHook],
+	},
+	versions: {
+		drafts: true,
 	},
 } satisfies CollectionConfig;

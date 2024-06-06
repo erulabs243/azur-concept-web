@@ -12,6 +12,7 @@ import {
 	Services,
 	ServiceCategories,
 	Posts,
+	PostCategories,
 } from "./collections";
 
 const filename = fileURLToPath(import.meta.url);
@@ -21,7 +22,14 @@ export default buildConfig({
 	admin: {
 		user: Users.slug,
 	},
-	collections: [Users, Media, Services, ServiceCategories, Posts],
+	collections: [
+		Users,
+		Media,
+		Services,
+		ServiceCategories,
+		Posts,
+		PostCategories,
+	],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",
 	typescript: {

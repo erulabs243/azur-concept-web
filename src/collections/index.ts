@@ -3,3 +3,4 @@ export { Media } from "./Media";
 export { Services } from "./Services";
 export { ServiceCategories } from "./ServiceCategories";
 export { Posts } from "./Posts";
+export { PostCategories } from "./PostCategories";
