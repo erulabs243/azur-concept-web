@@ -1,4 +1,6 @@
 import { Header } from "@/components/sections";
+
+import "@fontsource-variable/open-sans";
 import "./globals.css";
 
 export const metadata = {

@@ -14,6 +14,7 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
+    "@fontsource-variable/open-sans": "^5.0.29",
     "@payloadcms/db-postgres": "beta",
     "@payloadcms/next": "beta",
     "@payloadcms/plugin-cloud": "beta",

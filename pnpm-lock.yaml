@@ -12,6 +12,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/open-sans':
+        specifier: ^5.0.29
+        version: 5.0.29
       '@payloadcms/db-postgres':
         specifier: beta
         version: 3.0.0-beta.41(payload@3.0.0-beta.41(@swc/core@1.5.25(@swc/helpers@0.5.11))(@swc/types@0.1.7)(graphql@16.8.1)(typescript@5.4.5))(react@19.0.0-rc-f994737d14-20240522)(types-react@19.0.0-beta.2)
@@ -753,6 +756,9 @@ packages:
 
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
+
+  '@fontsource-variable/open-sans@5.0.29':
+    resolution: {integrity: sha512-p8T55iQwhErREcjY997t4ah9JKTyJNSBDDVfvVsWIQRGpA2fcTPk9rLue/Mkrr5/efkehxTSbT8JpTTRaFbM5A==}
 
   '@hapi/hoek@9.3.0':
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
@@ -5308,6 +5314,8 @@ snapshots:
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.2': {}
+
+  '@fontsource-variable/open-sans@5.0.29': {}
 
   '@hapi/hoek@9.3.0': {}
 
