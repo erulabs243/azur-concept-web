@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload/types";
 
+import { Media } from "./Media";
+
 export const Services = {
 	slug: "services",
 	admin: {
@@ -22,6 +24,19 @@ export const Services = {
 			type: "textarea",
 			required: true,
 			localized: true,
+		},
+		{
+			name: "slug",
+			label: "Slug",
+			type: "text",
+			localized: true,
+			// TODO generate slug on name
+		},
+		{
+			name: "icon",
+			label: "Icon",
+			type: "upload",
+			relationTo: Media.slug,
 		},
 	],
 } satisfies CollectionConfig;
