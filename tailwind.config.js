@@ -10,8 +10,14 @@ export default {
 				"open-sans": ["Open Sans Variable", DefaultTheme.fontFamily.sans],
 				sans: ["Open Sans Variable", DefaultTheme.fontFamily.sans],
 			},
+			container: {
+				center: true,
+			},
 		},
 	},
 	darkMode: "class",
 	plugins: [daisyui],
+	daisyui: {
+		themes: ["corporate"],
+	},
 };

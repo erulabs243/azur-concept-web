@@ -72,7 +72,7 @@ export const Projects = {
 			maxRows: 5,
 			fields: [
 				{
-					name: "screenshots",
+					name: "image",
 					type: "upload",
 					relationTo: Media.slug,
 				},
