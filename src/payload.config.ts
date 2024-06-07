@@ -19,6 +19,7 @@ import {
 	Reviews,
 	Faq,
 	Messages,
+	Pages,
 } from "./collections";
 
 const filename = fileURLToPath(import.meta.url);
@@ -27,6 +28,14 @@ const dirname = path.dirname(filename);
 export default buildConfig({
 	admin: {
 		user: Users.slug,
+		autoLogin:
+			process.env.PAYLOAD_ENABLE_AUTOLOGIN === "true"
+				? {
+						email: "dev.erulabs@gmail.com",
+						password: "dev@ERU.labs243",
+						prefillOnly: true,
+				  }
+				: false,
 	},
 	collections: [
 		Users,
@@ -41,6 +50,7 @@ export default buildConfig({
 		Reviews,
 		Faq,
 		Messages,
+		Pages,
 	],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",

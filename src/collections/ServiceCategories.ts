@@ -14,6 +14,11 @@ export const ServiceCategories = {
 			localized: true,
 		},
 		{
+			name: "subtitle",
+			type: "text",
+			localized: true,
+		},
+		{
 			name: "description",
 			type: "textarea",
 			required: true,

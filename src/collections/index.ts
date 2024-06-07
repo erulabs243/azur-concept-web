@@ -10,3 +10,4 @@ export { Projects } from "./Projects";
 export { Reviews } from "./Reviews";
 export { Faq } from "./Faq";
 export { Messages } from "./Messages";
+export { Pages } from "./Pages";

@@ -1,6 +1,8 @@
 import type { CollectionConfig } from "payload/types";
 
 import { Media } from "./Media";
+import { createdByField, slugField } from "@/fields";
+import { createdByHook } from "@/hooks";
 
 export const Services = {
 	slug: "services",
@@ -25,13 +27,8 @@ export const Services = {
 			required: true,
 			localized: true,
 		},
-		{
-			name: "slug",
-			label: "Slug",
-			type: "text",
-			localized: true,
-			// TODO generate slug on name
-		},
+		slugField("name"),
+		createdByField,
 		{
 			name: "icon",
 			label: "Icon",
@@ -43,5 +40,8 @@ export const Services = {
 		drafts: {
 			autosave: true,
 		},
+	},
+	hooks: {
+		beforeChange: [createdByHook],
 	},
 } satisfies CollectionConfig;
