@@ -13,6 +13,12 @@ import {
 	ServiceCategories,
 	Posts,
 	PostCategories,
+	Customers,
+	Profile,
+	Projects,
+	Reviews,
+	Faq,
+	Messages,
 } from "./collections";
 
 const filename = fileURLToPath(import.meta.url);
@@ -29,6 +35,12 @@ export default buildConfig({
 		ServiceCategories,
 		Posts,
 		PostCategories,
+		Profile,
+		Customers,
+		Projects,
+		Reviews,
+		Faq,
+		Messages,
 	],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",

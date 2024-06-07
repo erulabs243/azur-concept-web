@@ -39,4 +39,9 @@ export const Services = {
 			relationTo: Media.slug,
 		},
 	],
+	versions: {
+		drafts: {
+			autosave: true,
+		},
+	},
 } satisfies CollectionConfig;

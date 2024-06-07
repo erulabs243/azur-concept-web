@@ -1,32 +1,35 @@
-import { createdByField, slugField } from "@/fields";
 import { createdByHook } from "@/hooks";
 import type { CollectionConfig } from "payload/types";
+import { Services } from "./Services";
+import { createdByField } from "@/fields";
 
-export const PostCategories = {
-	slug: "postCategories",
-	admin: {
-		useAsTitle: "name",
-		group: "Blog",
-	},
+export const Faq = {
+	slug: "faq",
 	access: {
 		read: () => true,
 	},
+	admin: {
+		useAsTitle: "question",
+	},
 	fields: [
 		{
-			name: "name",
-			label: "Name",
 			type: "text",
+			name: "question",
 			required: true,
 			localized: true,
 		},
 		{
-			name: "description",
 			type: "textarea",
-			label: "Description",
+			name: "response",
 			required: true,
 			localized: true,
 		},
-		slugField("name"),
+		{
+			type: "relationship",
+			name: "service",
+			relationTo: Services.slug,
+			hasMany: true,
+		},
 		createdByField,
 	],
 	hooks: {

@@ -26,4 +26,9 @@ export const ServiceCategories = {
 			hasMany: true,
 		},
 	],
+	versions: {
+		drafts: {
+			autosave: true,
+		},
+	},
 } satisfies CollectionConfig;

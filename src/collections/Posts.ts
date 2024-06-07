@@ -91,6 +91,8 @@ export const Posts = {
 		beforeChange: [createdByHook],
 	},
 	versions: {
-		drafts: true,
+		drafts: {
+			autosave: true,
+		},
 	},
 } satisfies CollectionConfig;
