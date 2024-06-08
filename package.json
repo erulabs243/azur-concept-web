@@ -20,6 +20,7 @@
 		"@payloadcms/next": "beta",
 		"@payloadcms/plugin-cloud": "beta",
 		"@payloadcms/richtext-lexical": "beta",
+		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",
 		"deepmerge-ts": "^7.0.3",
 		"framer-motion": "^11.2.10",

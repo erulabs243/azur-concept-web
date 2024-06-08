@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload/types";
 import { Services } from "./Services";
+import { Media } from "./Media";
 
 export const ServiceCategories = {
 	slug: "serviceCategories",
@@ -29,6 +30,11 @@ export const ServiceCategories = {
 			type: "relationship",
 			relationTo: Services.slug,
 			hasMany: true,
+		},
+		{
+			name: "cover",
+			type: "upload",
+			relationTo: Media.slug,
 		},
 	],
 	versions: {

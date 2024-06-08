@@ -1,4 +1,4 @@
-import { Header } from "@/components/sections";
+import { Header, MenuMobile } from "@/components/sections";
 
 import "@fontsource-variable/open-sans";
 import "./globals.css";
@@ -16,8 +16,14 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<Header />
-				{children}
+				<div className="drawer">
+					<input type="checkbox" id="menu" className="drawer-toggle" />
+					<div className="drawer-content flex flex-col">
+						<Header />
+						<main className="-mt-20">{children}</main>
+					</div>
+					<MenuMobile />
+				</div>
 			</body>
 		</html>
 	);
