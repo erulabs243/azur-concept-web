@@ -55,6 +55,7 @@ export const Reviews = {
 					admin: {
 						width: "63%",
 					},
+					localized: true,
 				},
 			],
 		},

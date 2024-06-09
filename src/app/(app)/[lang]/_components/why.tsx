@@ -1,6 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import clsx from "clsx";
 
 const Why: React.FC = () => {
+	const [currentTab, setCurrentTab] = useState<string>("tab-1");
+	const focusTab = (id: string) => setCurrentTab(id);
+
 	return (
 		<section className="container py-12">
 			<div className="flex flex-col lg:flex-row-reverse gap-4 items-center">
@@ -22,23 +29,62 @@ const Why: React.FC = () => {
 						</p>
 					</header>
 					<div>
-						<nav role="tablist" className="tabs tabs-bordered">
-							<a role="tab" className="tab tab-active">
+						<nav role="tablist" className="flex flex-row">
+							<button
+								role="tab"
+								className={clsx(
+									"btn",
+									currentTab === "tab-1"
+										? "btn-primary flex-grow"
+										: "btn-ghost",
+								)}
+								onClick={() => focusTab("tab-1")}
+							>
 								Reaon #1
-							</a>
-							<a role="tab" className="tab">
+							</button>
+							<button
+								role="tab"
+								className={clsx(
+									"btn",
+									currentTab === "tab-2"
+										? "btn-primary flex-grow"
+										: "btn-ghost",
+								)}
+								onClick={() => focusTab("tab-2")}
+							>
 								Reason #2
-							</a>
-							<a role="tab" className="tab">
+							</button>
+							<button
+								role="tab"
+								className={clsx(
+									"btn",
+									currentTab === "tab-3"
+										? "btn-primary flex-grow"
+										: "btn-ghost",
+								)}
+								onClick={() => focusTab("tab-3")}
+							>
 								Reason #3
-							</a>
+							</button>
 						</nav>
-						<div role="tabpanel">
-							<p>
-								Ceci est au sujet de la premiere raison. Il faudrait juste faire
-								something awesome about it and all is set up
-							</p>
-						</div>
+						{currentTab === "tab-1" && (
+							<div role="tabpanel">
+								<p>
+									Ceci est au sujet de la premiere raison. Il faudrait juste
+									faire something awesome about it and all is set up
+								</p>
+							</div>
+						)}
+						{currentTab === "tab-2" && (
+							<div role="tabpanel">
+								<p>Ceci est la deuxieme raison. Juste un autre paragraphe</p>
+							</div>
+						)}
+						{currentTab === "tab-3" && (
+							<div role="tabpanel">
+								<p>Ceci est le dernier paragraphe a voir</p>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
