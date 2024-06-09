@@ -16,5 +16,3 @@ const Layout = ({ children }: Args) => (
 );
 
 export default Layout;
-
-export const runtime = "edge";
