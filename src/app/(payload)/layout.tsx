@@ -1,5 +1,3 @@
-export const runtime = "nodejs";
-
 /* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
 import configPromise from "@payload-config";
 import "@payloadcms/next/css";
@@ -18,3 +16,5 @@ const Layout = ({ children }: Args) => (
 );
 
 export default Layout;
+
+export const runtime = "edge";

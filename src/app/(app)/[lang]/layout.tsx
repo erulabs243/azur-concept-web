@@ -3,7 +3,7 @@ import { Header, MenuMobile } from "@/components/sections";
 import "@fontsource-variable/open-sans";
 import "./globals.css";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export const metadata = {
 	title: "Next.js",
