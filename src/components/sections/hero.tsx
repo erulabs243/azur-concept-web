@@ -36,7 +36,7 @@ const Hero: React.FC<Props> = ({
 	cta,
 }) => {
 	return (
-		<div className="min-h-[60vh] bg-red-400 flex flex-col justify-center ">
+		<div className="min-h-[60vh] bg-red-400 flex flex-col justify-center relative">
 			{image && (
 				<div className="absolute top-0 w-full h-full overflow-hidden brightness-50">
 					<Image

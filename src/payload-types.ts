@@ -117,6 +117,7 @@ export interface ServiceCategory {
   subtitle?: string | null;
   description: string;
   services?: (string | Service)[] | null;
+  cover?: string | Media | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
