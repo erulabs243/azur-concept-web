@@ -1,8 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-type PageLink = { label: string; link: string };
+import { Link } from "@/navigation";
+import type { pathnames } from "@/config";
+
+type PageLink = { label: string; link: keyof typeof pathnames };
 
 type Props = {
 	heading: string;

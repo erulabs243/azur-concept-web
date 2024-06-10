@@ -1,14 +1,18 @@
+import { useTranslations } from "next-intl";
+
 import { Hero } from "@/components/sections";
 import { Categories, Values, Statistics, Why, HowStart } from "./_components";
 
 export default function Page() {
+	const t = useTranslations("App.Home.Hero");
+
 	return (
 		<main>
 			<Hero
-				heading="A long home heading page"
+				heading={t("heading")}
 				subheading={{ label: "Check our services", link: "/services" }}
 				image="/bg.jpg"
-				description="Un tres longue petite description qui doit apparaitre sur tous les en-tetes. Je ne sais pas si ca va bien marcher. Mais il faut que ce soit le cas."
+				description={t("description")}
 				cta={{ link: "/contact", label: "Let's talk" }}
 			/>
 

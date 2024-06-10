@@ -1,0 +1,10 @@
+{
+	"App": {
+		"Home": {
+			"Hero": {
+				"heading": "Welcome to Azur Concept",
+				"description": "This is a little description on the home page hero "
+			}
+		}
+	}
+}
