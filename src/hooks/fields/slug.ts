@@ -14,6 +14,8 @@ export const formatSlug =
 		if (operation === "create" || operation === "update") {
 			const fallbackData = data?.[fallback] || originalDoc?.[fallback];
 
+			// console.log(fallbackData);
+			// TODO update slug everytime
 			if (fallbackData && typeof fallbackData === "string") {
 				return operation === "create"
 					? `${slug(fallbackData)}-${id}`

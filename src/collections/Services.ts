@@ -37,9 +37,7 @@ export const Services = {
 		},
 	],
 	versions: {
-		drafts: {
-			autosave: true,
-		},
+		drafts: true,
 	},
 	hooks: {
 		beforeChange: [createdByHook],

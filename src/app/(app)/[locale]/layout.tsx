@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Header, MenuMobile } from "@/components/sections";
+import { Footer, Header, MenuMobile } from "@/components/sections";
 
 import "@fontsource-variable/open-sans";
 import "./globals.css";
@@ -28,6 +28,7 @@ export default async function RootLayout({
 						<div className="drawer-content flex flex-col">
 							<Header />
 							<main className="-mt-20">{children}</main>
+							<Footer />
 						</div>
 						<MenuMobile />
 					</div>

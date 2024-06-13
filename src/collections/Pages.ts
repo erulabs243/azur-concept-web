@@ -13,9 +13,7 @@ export const Pages = {
 		defaultColumns: ["title", "heading"],
 	},
 	versions: {
-		drafts: {
-			autosave: true,
-		},
+		drafts: true,
 	},
 	fields: [
 		{

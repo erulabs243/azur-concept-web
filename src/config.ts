@@ -10,4 +10,17 @@ export const pathnames = {
 		fr: "/a-propos",
 		en: "/about",
 	},
+	"/contact": {
+		fr: "/contact",
+		en: "/contact",
+	},
+	"/services": {
+		fr: "/services",
+		en: "/services",
+	},
+	"/services/[slug]": "/services/[slug]",
+	"/blog": {
+		fr: "/blog",
+		en: "/blog",
+	},
 } satisfies Pathnames<typeof locales>;

@@ -86,8 +86,6 @@ export const Projects = {
 		beforeChange: [createdByHook],
 	},
 	versions: {
-		drafts: {
-			autosave: true,
-		},
+		drafts: true,
 	},
 } satisfies CollectionConfig;

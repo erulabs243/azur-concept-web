@@ -38,8 +38,6 @@ export const ServiceCategories = {
 		},
 	],
 	versions: {
-		drafts: {
-			autosave: true,
-		},
+		drafts: true,
 	},
 } satisfies CollectionConfig;

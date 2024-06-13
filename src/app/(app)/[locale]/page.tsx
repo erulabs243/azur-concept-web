@@ -1,10 +1,27 @@
 import { useTranslations } from "next-intl";
 
+import type { LocaleParams } from "@/types";
 import { Hero } from "@/components/sections";
-import { Categories, Values, Statistics, Why, HowStart } from "./_components";
+import {
+	Categories,
+	Values,
+	Statistics,
+	Why,
+	HowStart,
+	Testimonials,
+	Blog,
+	GetStarted,
+} from "./_components";
 
-export default function Page() {
+interface Props {
+	params: {
+		locale: LocaleParams;
+	};
+}
+
+export default function Page({ params }: Props) {
 	const t = useTranslations("App.Home.Hero");
+	const { locale } = params;
 
 	return (
 		<main>
@@ -30,6 +47,15 @@ export default function Page() {
 
 			{/* How getting started */}
 			<HowStart />
+
+			{/* Testimonials */}
+			<Testimonials locale={locale} />
+
+			{/* Blog */}
+			<Blog />
+
+			{/* Get started */}
+			<GetStarted />
 		</main>
 	);
 }
