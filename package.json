@@ -14,7 +14,7 @@
 		"start": "cross-env NODE_OPTIONS=--no-deprecation next start"
 	},
 	"dependencies": {
-		"@fontsource-variable/open-sans": "^5.0.29",
+		"@fontsource/open-sauce-one": "^5.0.11",
 		"@formatjs/intl-localematcher": "^0.5.4",
 		"@payloadcms/db-postgres": "beta",
 		"@payloadcms/next": "beta",
@@ -40,6 +40,8 @@
 		"slug": "^9.1.0"
 	},
 	"devDependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.13",
 		"@types/negotiator": "^0.6.3",
 		"@types/node": "^20.12.12",
 		"@types/react": "npm:types-react@19.0.0-beta.2",

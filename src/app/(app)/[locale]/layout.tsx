@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Footer, Header, MenuMobile } from "@/components/sections";
 
-import "@fontsource-variable/open-sans";
+import "@fontsource/open-sauce-one";
 import "./globals.css";
 
 export const metadata = {

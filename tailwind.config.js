@@ -7,8 +7,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				"open-sans": ["Open Sans Variable", DefaultTheme.fontFamily.sans],
-				sans: ["Open Sans Variable", DefaultTheme.fontFamily.sans],
+				"open-sauce": ["Open Sauce One", DefaultTheme.fontFamily.sans],
+				sans: ["Open Sauce One", DefaultTheme.fontFamily.sans],
 			},
 			container: {
 				center: true,
