@@ -39,7 +39,7 @@ const Avatar: React.FC<{ avatar?: string | Profile | null }> = ({ avatar }) => {
 
 const ReviewCard: React.FC<{ review: Review }> = ({ review }) => (
 	<div
-		className="flex flex-col gap-2 p-4 bg-gray-100 rounded-box w-1/2"
+		className="flex flex-col gap-2 p-4 border border-neutral hover:border-none transition-all duration-500 ease-in-out hover:bg-primary/30 hover:shadow-xs hover:cursor-pointer rounded-box w-1/2"
 		id={review.id}
 	>
 		<div className="flex-grow">
@@ -74,7 +74,12 @@ export default async function Testimonials({
 
 	return (
 		<section className="py-12 container space-y-8">
-			<h4>Ce qu'ils disent de nous</h4>
+			<header>
+				<h4 className="section-heading">Ce qu'ils disent de nous</h4>
+				<p className="section-description">
+					Une petite description sur ce qu'ils disent de nous
+				</p>
+			</header>
 			<div className="flex flex-col lg:flex-row p-4 gap-4">
 				<div className="w-full lg:w-1/3">
 					<Image
@@ -85,7 +90,7 @@ export default async function Testimonials({
 						height={480}
 					/>
 				</div>
-				<div className="w-full lg:w-2/3 flex flex-row gap-4 bg-neutral/75 p-4 rounded-box">
+				<div className="w-full lg:w-2/3 flex flex-row gap-4 p-4 rounded-box">
 					{reviews.docs.map((review) => (
 						<ReviewCard key={review.id} review={review} />
 					))}

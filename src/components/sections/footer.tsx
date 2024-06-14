@@ -18,11 +18,23 @@ export default async function Footer() {
 								category?.services?.length > 0 &&
 								category?.services?.map((service) =>
 									typeof service === "string" ? (
-										<Link href="/blog" key={service}>
+										<Link
+											href={{
+												pathname: "/services/[slug]",
+												params: { slug: service },
+											}}
+											key={service}
+										>
 											{service}
 										</Link>
 									) : (
-										<Link href="/blog" key={service.id}>
+										<Link
+											href={{
+												pathname: "/services/[slug]",
+												params: { slug: service.slug },
+											}}
+											key={service.id}
+										>
 											{service.name}
 										</Link>
 									),

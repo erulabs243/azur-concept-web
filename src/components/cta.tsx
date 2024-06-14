@@ -10,7 +10,7 @@ export const CtaButton: React.FC<Props> = ({ label, link }) => {
 	return (
 		<Link href={link} className="group btn btn-secondary btn-outline">
 			{label}
-			<ArrowUpRight className="size-4 hidden group-hover:flex" />
+			<ArrowUpRight className="size-4" />
 		</Link>
 	);
 };

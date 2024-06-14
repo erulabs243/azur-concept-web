@@ -32,16 +32,18 @@ const HowStart: React.FC = () => {
 	const focusStep = (id: number) => setActiveStep(id);
 
 	return (
-		<section className="bg-primary py-12">
+		<section className="bg-primary py-12 space-y-8">
 			<div className="container">
-				<h3 className="text-4xl text-center font-semibold">
-					Comment travailler avec nous
-				</h3>
-				<p className="text-center">
-					Un petit texte qui montre comment commencer a travailler avec Concept
-					Azur... Je crois qu'ils vont trouver un texte interessant a mettre
-					dessus
-				</p>
+				<header className="space-y-1 w-full md:w-1/2 mx-auto">
+					<h4 className="section-heading text-center">
+						Comment travailler avec nous
+					</h4>
+					<p className="section-description text-center text-base-content">
+						Un petit texte qui montre comment commencer a travailler avec
+						Concept Azur... Je crois qu'ils vont trouver un texte interessant a
+						mettre dessus
+					</p>
+				</header>
 				<div className="flex flex-row p-4">
 					<div className="flex flex-col gap-2 w-1/2">
 						{steps.map((item, idx) => (

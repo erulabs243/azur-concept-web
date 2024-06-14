@@ -8,6 +8,8 @@ import type { LocaleParams } from "@/types";
 export default async function Blog({ locale }: { locale?: LocaleParams }) {
 	const posts = await getPosts({ locale: locale });
 
+	console.log(posts);
+
 	return (
 		<section className="py-12 px-4 container">
 			<header>

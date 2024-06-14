@@ -38,7 +38,7 @@ const Hero: React.FC<Props> = ({
 	cta,
 }) => {
 	return (
-		<div className="min-h-[60vh] bg-red-400 flex flex-col justify-center relative">
+		<div className="min-h-[60vh] lg:min-h-[70vh] bg-red-400 flex flex-col justify-center relative">
 			{image && (
 				<div className="absolute top-0 w-full h-full overflow-hidden brightness-50">
 					<Image
@@ -50,11 +50,22 @@ const Hero: React.FC<Props> = ({
 					/>
 				</div>
 			)}
-			<div className="container z-10 py-24">
+			<div className="container z-10 py-24 px-8">
 				<Subheading content={subheading} />
 				<div className="flex flex-col lg:flex-row gap-4">
 					<div className="w-full lg:w-1/2 p-4 space-y-8">
-						<h1 className="text-5xl text-base-100 font-bold">{heading}</h1>
+						<div className="space-y-1">
+							<h1 className="text-2xl lg:text-5xl text-base-100 font-bold">
+								{heading}
+							</h1>
+							{description && (
+								<div className="w-full">
+									<p className="text-base lg:text-lg text-base-200">
+										{description}
+									</p>
+								</div>
+							)}
+						</div>
 						{cta && (
 							<Link href={cta.link} className="btn btn-primary w-48">
 								{cta.label}
@@ -62,11 +73,6 @@ const Hero: React.FC<Props> = ({
 							</Link>
 						)}
 					</div>
-					{description && (
-						<div className="w-full lg:w-1/2 py-4 px-8">
-							<p className="text-lg text-base-300">{description}</p>
-						</div>
-					)}
 				</div>
 			</div>
 		</div>

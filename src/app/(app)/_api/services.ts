@@ -8,11 +8,15 @@ export const getServiceCategories = cache(
 		await cms.find({
 			collection: "serviceCategories",
 			locale: lang,
-			where: { _status: { equals: "published" } },
+			where: { and: [{ _status: { equals: "published" } }] },
 		}),
 );
 
 export const getServices = cache(
 	async ({ lang = "fr" }: { lang?: Config["locale"] }) =>
-		await cms.find({ collection: "services", locale: lang }),
+		await cms.find({
+			collection: "services",
+			locale: lang,
+			where: { and: [{ _status: { equals: "published" } }] },
+		}),
 );

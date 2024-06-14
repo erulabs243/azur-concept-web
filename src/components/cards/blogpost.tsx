@@ -17,6 +17,7 @@ const PostCover: React.FC<{ image: string | Media | null }> = ({ image }) => {
 					alt="Image d'arriere plan"
 					width={1024}
 					height={1024}
+					className="group-hover:scale-110"
 				/>
 			</figure>
 		);
@@ -24,7 +25,13 @@ const PostCover: React.FC<{ image: string | Media | null }> = ({ image }) => {
 	if (typeof image === "string")
 		return (
 			<figure>
-				<Image src={image} alt="Image du post" width={1024} height={1024} />
+				<Image
+					src={image}
+					alt="Image du post"
+					className="group-hover:scale-110"
+					width={1024}
+					height={1024}
+				/>
 			</figure>
 		);
 
@@ -35,6 +42,7 @@ const PostCover: React.FC<{ image: string | Media | null }> = ({ image }) => {
 				alt={image.alt ?? "Image du blog"}
 				width={1024}
 				height={1024}
+				className="group-hover:scale-110 transition-transform duration-500 ease-in-out object-cover"
 			/>
 		</figure>
 	);

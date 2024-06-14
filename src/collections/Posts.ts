@@ -4,6 +4,7 @@ import { Media } from "./Media";
 import { createdByField, publishedOnField, slugField } from "@/fields";
 import { createdByHook } from "@/hooks";
 import { PostCategories } from "./PostCategories";
+import { readDraft } from "@/access/draft";
 
 export const Posts = {
 	slug: "posts",
@@ -11,6 +12,9 @@ export const Posts = {
 		useAsTitle: "title",
 		group: "Blog",
 		defaultColumns: ["title", "description", "createdBy"],
+	},
+	access: {
+		read: readDraft,
 	},
 	fields: [
 		{

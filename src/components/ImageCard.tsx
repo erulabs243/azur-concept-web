@@ -15,17 +15,19 @@ export const ImageCard: React.FC<Props> = ({ media }) => {
 				alt={media}
 				width={760}
 				height={480}
-				className="object-cover object-center"
+				className="object-cover object-center rounded-box hover:scale-110 transition-transform duration-500 ease-in-out hover:cursor-pointer"
 			/>
 		);
 
 	return (
-		<Image
-			alt={media.alt}
-			src={media.sizes?.card?.url}
-			width={760}
-			height={480}
-			className="object-cover object-center"
-		/>
+		<figure className="h-64 rounded-box overflow-hidden">
+			<Image
+				alt={media.alt}
+				src={media.sizes?.card?.url}
+				width={360}
+				height={360}
+				className="object-cover object-center w-full hover:scale-110 transition-transform duration-500 ease-in-out hover:cursor-pointer"
+			/>
+		</figure>
 	);
 };
