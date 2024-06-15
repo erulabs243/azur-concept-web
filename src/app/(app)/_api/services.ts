@@ -20,3 +20,14 @@ export const getServices = cache(
 			where: { and: [{ _status: { equals: "published" } }] },
 		}),
 );
+
+export const findService = cache(
+	async ({ slug, lang = "fr" }: { slug: string; lang?: Config["locale"] }) =>
+		await cms.find({
+			collection: "services",
+			locale: lang,
+			where: {
+				and: [{ _status: { equals: "published" } }, { slug: { equals: slug } }],
+			},
+		}),
+);

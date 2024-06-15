@@ -19,6 +19,7 @@
 		"@payloadcms/db-postgres": "beta",
 		"@payloadcms/next": "beta",
 		"@payloadcms/plugin-cloud": "beta",
+		"@payloadcms/plugin-form-builder": "^1.2.2",
 		"@payloadcms/richtext-lexical": "beta",
 		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",
