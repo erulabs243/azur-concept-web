@@ -1,5 +1,6 @@
+import { ArrowUpRight } from "lucide-react";
+
 import type { ServiceCategory } from "@/payload-types";
-import { CtaButton } from "../cta";
 import { ImageCard } from "../ImageCard";
 import { Link } from "@/navigation";
 
@@ -20,7 +21,7 @@ export const Category: React.FC<Props> = ({ category }) => {
 					<ImageCard media={category.cover} />
 				</Link>
 			)}
-			<div className="card-body  flex flex-col justify-between">
+			<div className="card-body p-0 mt-2 flex flex-col justify-between">
 				<div>
 					<Link
 						href={{
@@ -44,7 +45,15 @@ export const Category: React.FC<Props> = ({ category }) => {
 					</Link>
 				</div>
 				<footer className="card-actions">
-					<CtaButton label="Voir plus" link={`/services/${category.id}`} />
+					<Link
+						href={{
+							pathname: "/services/[slug]",
+							params: { slug: category.id },
+						}}
+						className="btn btn-outline btn-neutral btn-sm"
+					>
+						Voir plus <ArrowUpRight className="size-4" />
+					</Link>
 				</footer>
 			</div>
 		</div>

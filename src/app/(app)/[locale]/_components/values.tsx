@@ -4,48 +4,77 @@ import { ArrowUpRight } from "lucide-react";
 
 const Values: React.FC = () => {
 	return (
-		<section className="container py-12">
-			<div className="flex flex-col lg:flex-row gap-4 items-center">
-				<figure className="w-full lg:w-1/2 flex items-center justify-center h-[50vh] overflow-hidden">
-					<Image
-						src="/portrait.jpg"
-						alt="Image de portrait"
-						width={360}
-						height={480}
-					/>
-				</figure>
-				<div className="w-full lg:w-1/2 space-y-8">
-					<h2 className="text-4xl">Heading</h2>
-					<div className="flex flex-col lg:flex-row gap-2">
-						<h5 className="font-semibold w-full lg:w-1/5">Nos valuers</h5>
-						<div className="space-y-4">
-							<p>
-								Juste quelque chose au sujet de nos valuers. Une toute petite
-								description
-							</p>
-							<Link
-								href="/about#values"
-								className="btn btn-neutral btn-outline btn-sm"
-							>
-								Lire plus
-								<ArrowUpRight className="size-4" />
-							</Link>
-						</div>
+		<section className="container py-12 px-4 lg:px-12 md:py-24 bg-primary/25 rounded-box shadow-xl">
+			<div className="flex flex-col lg:flex-row gap-8 items-center">
+				<div className="w-full lg:w-2/5 items-center justify-end h-[50vh] hidden lg:flex overflow-hidden">
+					<figure className="rounded-box overflow-hidden shadow-sm">
+						<Image
+							src="/portrait.jpg"
+							alt="Image de portrait"
+							width={360}
+							height={480}
+							className="object-cover object-center"
+						/>
+					</figure>
+				</div>
+				<div className="w-full lg:flex-grow space-y-4 lg:space-y-8 px-4 lg:px-8">
+					<header className="w-full lg:w-4/5 p-0 lg:p-4 ">
+						<h2 className="section-heading">Heading</h2>
+						<p className="section-description">
+							Une petite longue Lorem ipsum dolor sit amet consectetur,
+							adipisicing elit. Tempora quod corrupti sint eligendi inventore
+							quisquam. Blanditiis, cum. Quod tenetur voluptatibus delectus
+							suscipit sapiente aspernatur laboriosam esse asperiores mollitia
+							ab? Ex.
+						</p>
+					</header>
+					<div className="w-full items-center justify-start h-72 flex lg:hidden overflow-hidden">
+						<figure className="rounded-box overflow-hidden shadow-sm">
+							<Image
+								src="/portrait.jpg"
+								alt="Image de portrait"
+								width={360}
+								height={480}
+								className="object-cover object-center"
+							/>
+						</figure>
 					</div>
-					<div className="flex flex-col lg:flex-row gap-2">
-						<h5 className="font-semibold w-full lg:w-1/5">Notre mission</h5>
-						<div className="space-y-4">
-							<p>
-								Juste quelque chose au sujet de nos valuers. Une toute petite
-								description
-							</p>
-							<Link
-								href="/about#values"
-								className="btn btn-neutral btn-outline btn-sm"
-							>
-								Lire plus
-								<ArrowUpRight className="size-4" />
-							</Link>
+					<div className="w-full lg:w-4/5 space-y-4 p-0 lg:px-4 py-4 lg:py-0">
+						<div className="flex flex-col lg:flex-row gap-0 md:gap-2">
+							<h5 className="font-semibold text-lg w-full lg:w-1/3">
+								Nos valuers
+							</h5>
+							<div className="space-y-2 flex-grow">
+								<p className="text-neutral-700 text-sm md:text-base">
+									Juste quelque chose au sujet de nos valuers. Une toute petite
+									description
+								</p>
+								<Link
+									href="/about#values"
+									className="btn btn-neutral btn-outline btn-sm"
+								>
+									Lire plus
+									<ArrowUpRight className="size-4" />
+								</Link>
+							</div>
+						</div>
+						<div className="flex flex-col lg:flex-row gap-0 md:gap-2">
+							<h5 className="font-semibold text-lg w-full lg:w-1/3">
+								Notre mission
+							</h5>
+							<div className="space-y-2 flex-grow">
+								<p>
+									Juste quelque chose au sujet de nos valuers. Une toute petite
+									description
+								</p>
+								<Link
+									href="/about#values"
+									className="btn btn-neutral btn-outline btn-sm"
+								>
+									Lire plus
+									<ArrowUpRight className="size-4" />
+								</Link>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -9,26 +9,28 @@ const Why: React.FC = () => {
 	const focusTab = (id: string) => setCurrentTab(id);
 
 	return (
-		<section className="container py-12">
-			<div className="flex flex-col lg:flex-row-reverse gap-4 items-center">
-				<figure className="w-full lg:w-1/2 flex items-center justify-center h-[50vh] overflow-hidden">
-					<Image
-						src="/portrait.jpg"
-						alt="Iage de portraint"
-						width={360}
-						height={480}
-					/>
-				</figure>
-				<div className="w-full lg:w-1/2 space-y-8 px-4">
-					<header>
-						<h2 className="text-4xl">Heading</h2>
-						<p>
+		<section className="container py-12 px-4 lg:px-12 md:py-24">
+			<div className="flex flex-col lg:flex-row-reverse gap-8 items-center">
+				<div className="w-full lg:w-2/5 hidden lg:flex items-center justify-center h-[50vh] overflow-hidden">
+					<figure className="rounded-box overflow-hidden shadow-sm">
+						<Image
+							src="/portrait.jpg"
+							alt="Iage de portraint"
+							width={360}
+							height={480}
+						/>
+					</figure>
+				</div>
+				<div className="w-full lg:flex-grow space-y-4 lg:space-y-8 px-4 lg:px-8">
+					<header className="w-full lg:w-4/5 p-0 lg:p-4">
+						<h2 className="section-heading">Heading</h2>
+						<p className="section-description">
 							Une toute petite descriptin a dire sur quelque chose sur pourquoi
 							travailler avec AzurConcept. Je ne sais pas trop quoi ecrire, mais
 							ca vaut vraiment la peine
 						</p>
 					</header>
-					<div>
+					<div className="w-full lg:w-4/5 space-y-4 p-0 lg:px-4 py-4 lg:py-0">
 						<nav role="tablist" className="flex flex-row">
 							<button
 								role="tab"

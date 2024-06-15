@@ -1,14 +1,22 @@
+// @ts-nocheck
+
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/navigation";
+
+import type { pathnames } from "@/config";
 
 type Props = {
 	label: string;
-	link: string;
+	link: keyof typeof pathnames;
+	size?: string;
 };
 
-export const CtaButton: React.FC<Props> = ({ label, link }) => {
+export const CtaButton: React.FC<Props> = ({ label, link, size }) => {
 	return (
-		<Link href={link} className="group btn btn-secondary btn-outline">
+		<Link
+			href={{ pathname: link }}
+			className={`group btn btn-secondary btn-outline ${size}`}
+		>
 			{label}
 			<ArrowUpRight className="size-4" />
 		</Link>

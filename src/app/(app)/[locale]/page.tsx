@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections";
 import {
 	Categories,
 	Values,
-	Statistics,
 	Why,
 	HowStart,
 	Testimonials,
@@ -38,9 +37,6 @@ export default function Page({ params }: Props) {
 
 			{/* Our values */}
 			<Values />
-
-			{/* Statistics */}
-			<Statistics />
 
 			{/* Why work with us */}
 			<Why />
