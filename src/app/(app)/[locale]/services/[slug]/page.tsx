@@ -12,7 +12,6 @@ interface Props {
 export default async function Page({ params }: Props) {
 	const { slug, locale } = params;
 	const service = await findService({ slug: slug, lang: locale });
-	console.log(service);
 
 	return (
 		<main>

@@ -20,6 +20,8 @@
 		"@payloadcms/next": "beta",
 		"@payloadcms/plugin-cloud": "beta",
 		"@payloadcms/plugin-form-builder": "^1.2.2",
+		"@payloadcms/plugin-search": "^1.1.1",
+		"@payloadcms/plugin-seo": "^2.3.2",
 		"@payloadcms/richtext-lexical": "beta",
 		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",

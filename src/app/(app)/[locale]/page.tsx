@@ -18,9 +18,11 @@ interface Props {
 	};
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
 	const t = useTranslations("App.Home.Hero");
 	const { locale } = params;
+	// const cover = await getCover({ page: "home" });
+	// console.log(cover);
 
 	return (
 		<main>

@@ -1,9 +1,9 @@
 // storage-adapter-import-placeholder
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import path from "path";
+import path from "node:path";
 import { buildConfig } from "payload/config";
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 import {
@@ -20,7 +20,9 @@ import {
 	Faq,
 	Messages,
 	Pages,
+	Covers,
 } from "./collections";
+import { Configuration } from "./globals";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -34,9 +36,10 @@ export default buildConfig({
 						email: "dev.erulabs@gmail.com",
 						password: "dev@ERU.labs243",
 						prefillOnly: true,
-				  }
+					}
 				: false,
 	},
+	globals: [Configuration],
 	collections: [
 		Users,
 		Media,
@@ -51,6 +54,7 @@ export default buildConfig({
 		Faq,
 		Messages,
 		Pages,
+		Covers,
 	],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",

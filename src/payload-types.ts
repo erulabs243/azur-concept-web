@@ -21,10 +21,13 @@ export interface Config {
     faq: Faq;
     messages: Message;
     pages: Page;
+    covers: Cover;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  globals: {};
+  globals: {
+    configuration: Configuration;
+  };
   locale: 'en' | 'fr';
   user: User & {
     collection: 'users';
@@ -321,6 +324,19 @@ export interface Statistics {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "covers".
+ */
+export interface Cover {
+  id: string;
+  page: 'home' | 'service' | 'about' | 'contact';
+  heading: string;
+  description: string;
+  cover: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
@@ -352,6 +368,41 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "configuration".
+ */
+export interface Configuration {
+  id: string;
+  site_name: string;
+  slogan?: string | null;
+  logo?: string | Media | null;
+  logo_square?: string | Profile | null;
+  phone_numbers?:
+    | {
+        phone?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  emails?:
+    | {
+        email?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  addresses?:
+    | {
+        address?: string | null;
+        street?: string | null;
+        city?: string | null;
+        province?: string | null;
+        country?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 
 

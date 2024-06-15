@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Link } from "@/navigation";
 import type { pathnames } from "@/config";
+import type { Media } from "@/payload-types";
 
 type PageLink = { label: string; link: keyof typeof pathnames };
 
@@ -10,7 +11,7 @@ type Props = {
 	heading: string;
 	description?: string;
 	subheading?: string | PageLink;
-	image?: string;
+	image?: string | Media;
 	cta?: PageLink;
 };
 
@@ -38,16 +39,26 @@ const Hero: React.FC<Props> = ({
 	cta,
 }) => {
 	return (
-		<div className="min-h-[60vh] lg:min-h-[70vh] bg-red-400 flex flex-col justify-center relative">
+		<div className="min-h-[60vh] lg:min-h-[70vh] bg-primary flex flex-col justify-center relative">
 			{image && (
 				<div className="absolute top-0 w-full h-full overflow-hidden brightness-50">
-					<Image
-						src={image}
-						alt={heading}
-						width={4096}
-						height={4096}
-						className="w-full h-full object-cover"
-					/>
+					{typeof image === "string" ? (
+						<Image
+							src={image}
+							alt={heading}
+							width={4096}
+							height={4096}
+							className="w-full h-full object-cover"
+						/>
+					) : (
+						<Image
+							src={image.url}
+							alt={heading}
+							width={4096}
+							height={4096}
+							className="w-full h-full object-cover"
+						/>
+					)}
 				</div>
 			)}
 			<div className="container z-10 py-24 px-8">
