@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import { ArrowUpRight } from "lucide-react";
 import { MenuPage } from "./menu.page";
+import { Link } from "@/navigation";
 
 const MenuMobile: React.FC = () => {
 	return (

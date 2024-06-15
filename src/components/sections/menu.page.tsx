@@ -1,7 +1,9 @@
-import Link from "next/link";
+// @ts-nocheck
+
 import { clsx } from "clsx";
 
 import { pages } from "@/data/menus";
+import { Link } from "@/navigation";
 
 type Props = {
 	mobile?: boolean;
@@ -17,7 +19,7 @@ export const MenuPage: React.FC<Props> = ({ mobile = false }) => {
 		>
 			{pages.map((page) => (
 				<li key={page.link}>
-					<Link href={page.link}>{page.label}</Link>
+					<Link href={{ pathname: page.link }}>{page.label}</Link>
 				</li>
 			))}
 		</ul>

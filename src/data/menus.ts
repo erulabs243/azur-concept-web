@@ -1,10 +1,8 @@
-type Page = { label: string; link: string };
+import type { pathnames } from "@/config";
+
+type Page = { label: string; link: keyof typeof pathnames };
 export const pages: Array<Page> = [
 	{ label: "About", link: "/about" },
 	{ label: "Services", link: "/services" },
-	{
-		label: "Portfolio",
-		link: "/portfolio",
-	},
 	{ label: "Blog", link: "/blog" },
 ];
