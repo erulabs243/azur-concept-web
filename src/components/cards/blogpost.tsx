@@ -50,7 +50,7 @@ const PostCover: React.FC<{ image: string | Media | null }> = ({ image }) => {
 
 export const BlogPost: React.FC<Props> = ({ post }) => {
 	return (
-		<div className="card w-96 h-64 group bg-base-100 shadow-xl rounded-box image-full hover:cursor-pointer mx-auto">
+		<div className="card w-full lg:w-96 h-64 group bg-base-100 shadow-xl rounded-box image-full hover:cursor-pointer mx-auto">
 			<Link href="/blog">
 				<PostCover image={post.cover} />
 			</Link>

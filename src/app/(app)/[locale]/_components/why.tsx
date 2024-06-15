@@ -1,17 +1,40 @@
-"use client";
+import { ArrowUpRight } from "lucide-react";
 
-import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 
+type WhyCardProps = {
+	title: string;
+	description: string;
+};
+
+const WhyCard: React.FC<WhyCardProps> = ({ title, description }) => {
+	return (
+		<div className="border group border-neutral p-4 gap-2 rounded-box flex flex-col hover:cursor-pointer hover:border-none hover:bg-neutral/25 transition-all duration-500 ease-in-out shadow-sm">
+			<div className="p-2 rounded-box border border-primary bg-none group-hover:bg-primary group-hover:border-none self-start transition-all duration-500 ease-in-out">
+				<ArrowUpRight className="size-8" />
+			</div>
+			<h6 className="text-xl font-semibold">{title}</h6>
+			<p className="text-neutral-600">{description}</p>
+		</div>
+	);
+};
+
 const Why: React.FC = () => {
-	const [currentTab, setCurrentTab] = useState<string>("tab-1");
-	const focusTab = (id: string) => setCurrentTab(id);
+	const reasons: WhyCardProps[] = [
+		{
+			title: "Reason #1",
+			description: "Une description sur la premiere raison",
+		},
+		{ title: "Reason #2", description: "Une description sur la 2nde raison" },
+		{ title: "Reason #3", description: "Une 3eme description" },
+		{ title: "Reason #4", description: "At least a last one" },
+	];
 
 	return (
 		<section className="container py-12 px-4 lg:px-12 md:py-24">
 			<div className="flex flex-col lg:flex-row-reverse gap-8 items-center">
-				<div className="w-full lg:w-2/5 hidden lg:flex items-center justify-center h-[50vh] overflow-hidden">
+				<div className="w-full lg:w-2/5 hidden lg:flex items-center justify-start h-[50vh] overflow-hidden">
 					<figure className="rounded-box overflow-hidden shadow-sm">
 						<Image
 							src="/portrait.jpg"
@@ -30,63 +53,14 @@ const Why: React.FC = () => {
 							ca vaut vraiment la peine
 						</p>
 					</header>
-					<div className="w-full lg:w-4/5 space-y-4 p-0 lg:px-4 py-4 lg:py-0">
-						<nav role="tablist" className="flex flex-row">
-							<button
-								role="tab"
-								className={clsx(
-									"btn",
-									currentTab === "tab-1"
-										? "btn-primary flex-grow"
-										: "btn-ghost",
-								)}
-								onClick={() => focusTab("tab-1")}
-							>
-								Reaon #1
-							</button>
-							<button
-								role="tab"
-								className={clsx(
-									"btn",
-									currentTab === "tab-2"
-										? "btn-primary flex-grow"
-										: "btn-ghost",
-								)}
-								onClick={() => focusTab("tab-2")}
-							>
-								Reason #2
-							</button>
-							<button
-								role="tab"
-								className={clsx(
-									"btn",
-									currentTab === "tab-3"
-										? "btn-primary flex-grow"
-										: "btn-ghost",
-								)}
-								onClick={() => focusTab("tab-3")}
-							>
-								Reason #3
-							</button>
-						</nav>
-						{currentTab === "tab-1" && (
-							<div role="tabpanel">
-								<p>
-									Ceci est au sujet de la premiere raison. Il faudrait juste
-									faire something awesome about it and all is set up
-								</p>
-							</div>
-						)}
-						{currentTab === "tab-2" && (
-							<div role="tabpanel">
-								<p>Ceci est la deuxieme raison. Juste un autre paragraphe</p>
-							</div>
-						)}
-						{currentTab === "tab-3" && (
-							<div role="tabpanel">
-								<p>Ceci est le dernier paragraphe a voir</p>
-							</div>
-						)}
+					<div className="w-full lg:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-4 p-0 lg:px-4 py-4 lg:py-0">
+						{reasons.map((reason) => (
+							<WhyCard
+								key={reason.title}
+								title={reason.title}
+								description={reason.description}
+							/>
+						))}
 					</div>
 				</div>
 			</div>

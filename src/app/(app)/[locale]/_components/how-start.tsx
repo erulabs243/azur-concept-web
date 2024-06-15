@@ -1,76 +1,69 @@
-"use client";
-
-import { useState } from "react";
 import clsx from "clsx";
+import { ArrowUp01 } from "lucide-react";
 
 type StartCardProps = {
 	id: number;
-	active: boolean;
 	title: string;
 	description: string;
-	cta?: { label: string; link: string };
 };
 
-const steps: Omit<StartCardProps, "id" | "active">[] = [
+const steps: StartCardProps[] = [
 	{
+		id: 1,
 		title: "Call",
 		description: "View our contact form and book a call for your project",
-		cta: { label: "Let's talk", link: "/contact" },
 	},
 	{
+		id: 2,
 		title: "Step 2",
 		description: "View the 2nd step before start working on your project",
 	},
 	{
+		id: 3,
 		title: "Step 3",
 		description: "This is the last step. We hope everything will be fine",
 	},
 ];
 
-const HowStart: React.FC = () => {
-	const [activeStep, setActiveStep] = useState<number>(0);
-	const focusStep = (id: number) => setActiveStep(id);
-
+const StartCard: React.FC<StartCardProps> = ({ id, title, description }) => {
 	return (
-		<section className="bg-primary py-12 space-y-8">
-			<div className="container">
-				<header className="space-y-1 w-full md:w-1/2 mx-auto">
-					<h4 className="section-heading text-center">
-						Comment travailler avec nous
-					</h4>
-					<p className="section-description text-center text-base-content">
+		<div className="border border-neutral p-4 rounded-box hover:border-none hover:shadow-sm flex flex-col gap-2 hover:cursor-pointer hover:bg-gray-100 shadow-sm transition-all duration-500 ease-in-out">
+			<div className="p-2 rounded-box border border-neutral self-start">
+				{
+					{
+						1: <ArrowUp01 className="size-8" />,
+						2: <ArrowUp01 className="size-8" />,
+						3: <ArrowUp01 className="size-8" />,
+					}[id]
+				}
+			</div>
+			<h5 className="text-xl font-semibold">{title}</h5>
+			<p className="text-primary-content">{description}</p>
+		</div>
+	);
+};
+
+const HowStart: React.FC = () => {
+	return (
+		<section className="bg-primary py-12 md:py-24 lg:py-36 shadow-xl">
+			<div className="container space-y-8 px-4">
+				<header className="w-full md:w-1/2 px-4">
+					<h4 className="section-heading">Comment travailler avec nous</h4>
+					<p className="section-description text-primary-content">
 						Un petit texte qui montre comment commencer a travailler avec
 						Concept Azur... Je crois qu'ils vont trouver un texte interessant a
 						mettre dessus
 					</p>
 				</header>
-				<div className="flex flex-row p-4">
-					<div className="flex flex-col gap-2 w-1/2">
-						{steps.map((item, idx) => (
-							<div className="flex flex-row" key={item.title}>
-								<div
-									className="w-full lg:w-1/3 hover:cursor-pointer"
-									onClick={() => focusStep(idx)}
-									onKeyUp={() => focusStep(idx)}
-								>
-									<p>{`Etape ${idx + 1}`}</p>
-									<h4>{item.title}</h4>
-								</div>
-							</div>
-						))}
-					</div>
-					<div className="flex flex-col w-1/2">
-						{steps.map((item, idx) => (
-							<div
-								className={clsx(
-									activeStep === idx ? "flex flex-grow" : "hidden",
-								)}
-								key={item.title}
-							>
-								<p className="timeline-end">{item.description}</p>
-							</div>
-						))}
-					</div>
+				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4">
+					{steps.map((step) => (
+						<StartCard
+							key={step.title}
+							id={step.id}
+							title={step.title}
+							description={step.description}
+						/>
+					))}
 				</div>
 			</div>
 		</section>
