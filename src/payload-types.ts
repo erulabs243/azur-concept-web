@@ -328,7 +328,7 @@ export interface Statistics {
  */
 export interface Cover {
   id: string;
-  page: 'home' | 'service' | 'about' | 'contact';
+  page: 'home' | 'service' | 'about' | 'contact' | 'blog';
   heading: string;
   description: string;
   cover: string | Media;

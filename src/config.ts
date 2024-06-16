@@ -23,4 +23,5 @@ export const pathnames = {
 		fr: "/blog",
 		en: "/blog",
 	},
+	"/blog/[slug]": "/blog/[slug]",
 } satisfies Pathnames<typeof locales>;

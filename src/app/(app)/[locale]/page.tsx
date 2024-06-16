@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import type { LocaleParams } from "@/types";
 import { Hero } from "@/components/sections";
@@ -11,6 +11,7 @@ import {
 	Blog,
 	GetStarted,
 } from "./_components";
+import { getCover } from "../_api/covers";
 
 interface Props {
 	params: {
@@ -19,18 +20,17 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-	const t = useTranslations("App.Home.Hero");
+	const t = await getTranslations("App.Home.Hero");
 	const { locale } = params;
-	// const cover = await getCover({ page: "home" });
-	// console.log(cover);
+	const cover = await getCover({ page: "home" });
 
 	return (
 		<main>
 			<Hero
-				heading={t("heading")}
+				heading={cover?.heading ?? t("heading")}
 				subheading={{ label: "Check our services", link: "/services" }}
-				image="/bg.jpg"
-				description={t("description")}
+				image={cover?.cover ?? "/bg.jpg"}
+				description={cover?.description ?? t("description")}
 				cta={{ link: "/contact", label: "Let's talk" }}
 			/>
 

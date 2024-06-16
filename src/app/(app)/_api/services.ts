@@ -22,12 +22,15 @@ export const getServices = cache(
 );
 
 export const findService = cache(
-	async ({ slug, lang = "fr" }: { slug: string; lang?: Config["locale"] }) =>
-		await cms.find({
+	async ({ slug, lang = "fr" }: { slug: string; lang?: Config["locale"] }) => {
+		const services = await cms.find({
 			collection: "services",
 			locale: lang,
 			where: {
 				and: [{ _status: { equals: "published" } }, { slug: { equals: slug } }],
 			},
-		}),
+		});
+
+		return services.totalDocs > 0 ? services.docs[0] : null;
+	},
 );

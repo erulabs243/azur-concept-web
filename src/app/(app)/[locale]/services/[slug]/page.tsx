@@ -13,12 +13,14 @@ export default async function Page({ params }: Props) {
 	const { slug, locale } = params;
 	const service = await findService({ slug: slug, lang: locale });
 
+	if (!service) throw Error("Something was wrong");
+
 	return (
 		<main>
 			<Hero
-				heading={service.docs[0].name}
+				heading={service.name}
 				image="/bg.jpg"
-				description={service.docs[0].description}
+				description={service.description}
 			/>
 			<div className="p-4">
 				<h1>A simple service</h1>

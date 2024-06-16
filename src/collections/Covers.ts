@@ -16,6 +16,7 @@ export const Covers = {
 				{ label: "Services", value: "service" },
 				{ label: "About", value: "about" },
 				{ label: "Contact", value: "contact" },
+				{ label: "Blog", value: "blog" },
 			],
 			required: true,
 			unique: true,
