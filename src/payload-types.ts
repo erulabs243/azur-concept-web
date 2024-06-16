@@ -150,6 +150,7 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  content_html?: string | null;
   slug: string;
   publishedOn?: string | null;
   createdBy: string | User;

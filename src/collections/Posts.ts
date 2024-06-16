@@ -1,4 +1,9 @@
 import type { CollectionConfig } from "payload/types";
+import {
+	lexicalEditor,
+	lexicalHTML,
+	HTMLConverterFeature,
+} from "@payloadcms/richtext-lexical";
 
 import { Media } from "./Media";
 import { createdByField, publishedOnField, slugField } from "@/fields";
@@ -61,7 +66,14 @@ export const Posts = {
 							label: "Content",
 							localized: true,
 							required: true,
+							editor: lexicalEditor({
+								features: ({ defaultFeatures }) => [
+									...defaultFeatures,
+									HTMLConverterFeature({}),
+								],
+							}),
 						},
+						lexicalHTML("content", { name: "content_html" }),
 					],
 				},
 			],

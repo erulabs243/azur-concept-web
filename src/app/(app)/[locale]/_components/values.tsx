@@ -1,6 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+
+import { Link } from "@/navigation";
 
 const Values: React.FC = () => {
 	return (
@@ -50,7 +51,7 @@ const Values: React.FC = () => {
 									description
 								</p>
 								<Link
-									href="/about#values"
+									href="/about"
 									className="btn btn-neutral btn-outline btn-sm"
 								>
 									Lire plus
@@ -68,7 +69,7 @@ const Values: React.FC = () => {
 									description
 								</p>
 								<Link
-									href="/about#values"
+									href="/about"
 									className="btn btn-neutral btn-outline btn-sm"
 								>
 									Lire plus

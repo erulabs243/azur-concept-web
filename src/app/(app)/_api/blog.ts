@@ -50,3 +50,17 @@ export const findPost = cache(
 		return posts.totalDocs > 0 ? posts.docs[0] : null;
 	},
 );
+
+export const findPostsForCategory = cache(
+	async ({ id, lang = "fr" }: { id: string; lang?: LocaleParams }) =>
+		await cms.find({
+			collection: "posts",
+			locale: lang,
+			where: {
+				and: [
+					{ _status: { equals: "published" } },
+					{ categories: { contains: id } },
+				],
+			},
+		}),
+);

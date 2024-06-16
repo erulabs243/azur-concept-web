@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 
 import { Hero } from "@/components/sections";
 import type { LocaleParams } from "@/types";
 import { findCategory } from "@/app/(app)/_api/blog";
+import Posts from "./_components/posts";
 
 interface Props {
 	params: {
@@ -26,9 +28,9 @@ export default async function Page({ params }: Props) {
 				image="/bg.jpg"
 			/>
 
-			<div className="p-4 container">
-				<p>Posts</p>
-			</div>
+			<Suspense fallback={<p>Chargement...</p>}>
+				<Posts category={category.id} />
+			</Suspense>
 		</main>
 	);
 }

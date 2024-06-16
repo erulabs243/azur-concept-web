@@ -50,27 +50,23 @@ const PostCover: React.FC<{ image: string | Media | null }> = ({ image }) => {
 
 export const BlogPost: React.FC<Props> = ({ post }) => {
 	return (
-		<div className="card w-full lg:w-96 h-64 group bg-base-100 shadow-xl rounded-box image-full hover:cursor-pointer mx-auto">
-			<Link href="/blog">
+		<div className="card w-full lg:max-w-96 h-64 group bg-base-100 shadow-xl rounded-box image-full hover:cursor-pointer mx-auto">
+			<Link href={{ pathname: "/posts/[slug]", params: { slug: post.slug } }}>
 				<PostCover image={post.cover} />
 			</Link>
 			<div className="card-body flex flex-col justify-end">
-				<Link
-					href={{ pathname: "/services/[slug]", params: { slug: post.slug } }}
-				>
+				<Link href={{ pathname: "/posts/[slug]", params: { slug: post.slug } }}>
 					<h5 className="card-title hover:underline line-clamp-2">
 						{post.title}
 					</h5>
 				</Link>
-				<Link
-					href={{ pathname: "/services/[slug]", params: { slug: post.slug } }}
-				>
+				<Link href={{ pathname: "/posts/[slug]", params: { slug: post.slug } }}>
 					<p className="line-clamp-3 text-sm text-gray-300 flex-grow-0">
 						{post.excerpt}
 					</p>
 				</Link>
 				<Link
-					href={{ pathname: "/services/[slug]", params: { slug: post.slug } }}
+					href={{ pathname: "/posts/[slug]", params: { slug: post.slug } }}
 					className="btn btn-sm self-start btn-neutral"
 				>
 					Lire <ArrowUpRight className="size-4" />

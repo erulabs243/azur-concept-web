@@ -22,7 +22,7 @@ export default async function Blog({ locale }: { locale?: LocaleParams }) {
 					</Link>
 				</div>
 			</header>
-			<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 lg:px-0">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 lg:px-0">
 				{posts.docs.map((post) => (
 					<BlogPost key={post.id} post={post} />
 				))}
