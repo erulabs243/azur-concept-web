@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { ArrowUp01 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 type StartCardProps = {
 	id: number;
@@ -44,15 +44,15 @@ const StartCard: React.FC<StartCardProps> = ({ id, title, description }) => {
 };
 
 const HowStart: React.FC = () => {
+	const t = useTranslations("App.Home.How");
+
 	return (
 		<section className="bg-primary py-12 md:py-24 lg:py-36 shadow-xl">
 			<div className="container space-y-8 px-4">
 				<header className="w-full md:w-1/2 px-4">
-					<h4 className="section-heading">Comment travailler avec nous</h4>
+					<h4 className="section-heading">{t("heading")}</h4>
 					<p className="section-description text-primary-content">
-						Un petit texte qui montre comment commencer a travailler avec
-						Concept Azur... Je crois qu'ils vont trouver un texte interessant a
-						mettre dessus
+						{t("description")}
 					</p>
 				</header>
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4">

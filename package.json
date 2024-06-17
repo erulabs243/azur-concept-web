@@ -16,6 +16,7 @@
 	"dependencies": {
 		"@fontsource/open-sauce-one": "^5.0.11",
 		"@formatjs/intl-localematcher": "^0.5.4",
+		"@lexical/headless": "^0.16.0",
 		"@payloadcms/db-postgres": "beta",
 		"@payloadcms/next": "beta",
 		"@payloadcms/plugin-cloud": "beta",

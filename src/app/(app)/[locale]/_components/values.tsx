@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/navigation";
 
 const Values: React.FC = () => {
+	const t = useTranslations("App.Home.Business");
+
 	return (
 		<section className="container py-12 px-4 lg:px-12 md:py-24 bg-primary/25 rounded-box shadow-xl">
 			<div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -20,14 +23,8 @@ const Values: React.FC = () => {
 				</div>
 				<div className="w-full lg:flex-grow space-y-4 lg:space-y-8 px-4 lg:px-8">
 					<header className="w-full lg:w-4/5 p-0 lg:p-4 ">
-						<h2 className="section-heading">Heading</h2>
-						<p className="section-description">
-							Une petite longue Lorem ipsum dolor sit amet consectetur,
-							adipisicing elit. Tempora quod corrupti sint eligendi inventore
-							quisquam. Blanditiis, cum. Quod tenetur voluptatibus delectus
-							suscipit sapiente aspernatur laboriosam esse asperiores mollitia
-							ab? Ex.
-						</p>
+						<h2 className="section-heading">{t("heading")}</h2>
+						<p className="section-description">{t("description")} </p>
 					</header>
 					<div className="w-full items-center justify-start h-72 flex lg:hidden overflow-hidden">
 						<figure className="rounded-box overflow-hidden shadow-sm">

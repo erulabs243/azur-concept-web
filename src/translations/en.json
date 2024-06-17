@@ -2,9 +2,104 @@
 	"App": {
 		"Home": {
 			"Hero": {
-				"heading": "Welcome to Azur Concept",
-				"description": "This is a little description on the home page hero "
+				"heading": "Your One-Stop Shop for All Things Marketing & Communication",
+				"description": "Elevate your brand and achieve your business goals with our integrated marketing, communication, and advertising solutions. We craft strategic campaigns that deliver results.",
+				"cta": "Let's talk",
+				"subheading": "Discover our services"
+			},
+			"Categories": {
+				"heading": "Integrated Marketing & Communication Solutions",
+				"description": "Explore our comprehensive services in marketing, communication, and advertising to find the perfect fit for your business goals"
+			},
+			"Blog": {
+				"heading": "Stay Informed & Inspired with Marketing Insights",
+				"description": "Dive deeper into industry trends, marketing tips, and expert advice on our blog.",
+				"cta": "Read Our Latest Blog Posts"
+			},
+			"Testimonials": {
+				"heading": "What Our Clients Say About Us",
+				"description": "Discover why our clients choose us and see how we've helped them achieve success.",
+				"cta": "See Our Success Stories"
+			},
+			"Why": {
+				"heading": "Delivering Results & Exceeding Expectations",
+				"description": "Learn more about the unique value proposition we offer and the benefits of partnering with us."
+			},
+			"How": {
+				"heading": "Get Your Project Rolling Today",
+				"description": "Take a step towards achieving your marketing goals. Learn how to get started with our services."
+			},
+			"Business": {
+				"heading": "Our Mission & Core Values",
+				"description": "Unveiling our company's mission, core values, and how we strive to make a difference"
+			},
+			"CTA": {
+				"heading": "Let's Discuss Your Marketing Needs",
+				"description": "Schedule a free consultation to discuss your project and explore how we can help your business thrive.",
+				"cta": "Let's Discuss Your Marketing Needs"
 			}
+		},
+		"About": {
+			"Hero": {
+				"heading": "Unveiling Our Story & Expertise",
+				"description": "Learn more about our team, values, and what sets us apart in the marketing, communication, and advertising industry."
+			},
+			"Vision": {
+				"heading": "Our Vision & Mission - Driving Success Through Marketing",
+				"description": "Explore our company's vision for the future and the mission that shapes everything we do."
+			},
+			"Values": {
+				"heading": "Core Values Guiding Our Work",
+				"description": "Learn more about the core values that guide our work ethic, decision-making, and client interactions."
+			},
+			"Team": {
+				"heading": "The Marketing Experts Behind Your Success",
+				"description": "Meet our talented and passionate team of marketing professionals dedicated to your success."
+			},
+			"Story": {
+				"heading": "Unveiling Our Story & How We Began",
+				"description": "Discover the story behind our company, how we started, and what has fueled our journey to become a leading marketing service provider."
+			}
+		},
+		"Services": {
+			"Hero": {
+				"heading": "Services Tailored to Your Business Needs",
+				"description": "Discover how our comprehensive marketing, communication, and advertising services can help you achieve your goals.",
+				"cta": "Explore Our Services"
+			}
+		},
+		"Contact": {
+			"Hero": {
+				"heading": "Let's Connect & Discuss Your Project",
+				"description": "We'd love to hear about your business goals. Get in touch for a free consultation today."
+			},
+			"Form": {
+				"heading": "Get In Touch & Let's Discuss Your Project"
+			},
+			"Info": {
+				"heading": "Connect With Us Here"
+			}
+		},
+		"Blog": {
+			"Hero": {
+				"heading": "Stay Ahead of the Curve with Marketing Insights",
+				"description": "Explore our blog for industry trends, marketing tips, and expert advie to stay informed and inspired."
+			}
+		},
+		"Cases": {
+			"Hero": {
+				"heading": "See How We Deliver Results",
+				"description": "Dive into our case studies to explore how we've helped businesses like yours achieve remarkable success."
+			}
+		},
+		"Portfolio": {
+			"Hero": {
+				"heading": "Showcasing Our Work & Creativity",
+				"description": "Browse our portfolio to get a glimpse of our creative approach and the impactful results we deliver."
+			}
+		},
+		"CTA": {
+			"start": "Let's talk"
 		}
 	}
 }

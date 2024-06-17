@@ -2,8 +2,104 @@
 	"App": {
 		"Home": {
 			"Hero": {
-				"heading": "Bienvenue a Azur Concept"
+				"heading": "Votre guichet unique pour tout ce qui concerne le Marketing et la Communication",
+				"description": "Améliorez votre marque et atteignez vos objectifs commerciaux grâce à nos solutions intégrées de marketing, de communication et de publicité. Nous concevons des campagnes stratégiques qui donnent des résultats.",
+				"cta": "Parlons-en",
+				"subheading": "Découvrez nos services"
+			},
+			"Categories": {
+				"heading": "Solutions intégrées de marketing et de communication",
+				"description": "Explorez nos services complets en matière de marketing, de communication et de publicité pour trouver la solution idéale à vos objectifs commerciaux."
+			},
+			"Blog": {
+				"heading": "Restez à l'avant-garde grâce aux nouvelles de marketing",
+				"description": "Plongez dans les tendances du secteur, les astuces marketing et les conseils d'experts sur notre blog.",
+				"cta": "Lire nos derniers articles de blog"
+			},
+			"Testimonials": {
+				"heading": "Ce que nos clients disent de nous",
+				"description": "Découvrez pourquoi nos clients nous choisissent et comment nous les avons aidés à réussir.",
+				"cta": "Voir nos réussites"
+			},
+			"Why": {
+				"heading": "Fournir des résultats et dépasser les attente",
+				"description": "Découvrez la proposition de valeur unique que nous offrons et les avantages d'un partenariat avec nous."
+			},
+			"How": {
+				"heading": "Lancez votre projet dès aujourd'hui",
+				"description": "Faites un pas vers la réalisation de vos objectifs de marketing. Apprenez comment démarrer avec nos services."
+			},
+			"Business": {
+				"heading": "Notre mission et nos valeurs fondamentales",
+				"description": "Découvrez la mission de notre entreprise, ses valeurs fondamentales et la manière dont nous nous efforçons de faire la différence."
+			},
+			"CTA": {
+				"heading": "Discutons de vos besoins en marketing",
+				"description": "Planifiez une consultation gratuite pour discuter de votre projet et découvrir comment nous pouvons aider votre entreprise à prospérer.",
+				"cta": "Discutons de vos besoins en marketing"
 			}
+		},
+		"About": {
+			"Hero": {
+				"heading": "The Marketing Experts Behind Your Success",
+				"description": "En savoir plus sur notre équipe, nos valeurs et ce qui nous distingue dans le secteur du marketing, de la communication et de la publicité."
+			},
+			"Vision": {
+				"heading": "Our Vision & Mision - Driving Success Through Marketing",
+				"description": "Explorez la vision de notre entreprise pour l'avenir et la mission qui façonne tout ce que nous faisons."
+			},
+			"Values": {
+				"heading": "Valeurs fondamentales guidant notre travail",
+				"description": "Découvrez les valeurs fondamentales qui guident notre éthique de travail, notre prise de décision et nos interactions avec les clients."
+			},
+			"Team": {
+				"heading": "Les experts en marketing à l'origine de votre succès",
+				"description": "Rencontrez notre équipe talentueuse et passionnée de professionnels du marketing qui se consacrent à votre réussite."
+			},
+			"Story": {
+				"heading": "Révéler notre histoire et nos débuts",
+				"description": "Découvrez l'histoire de notre entreprise, comment nous avons commencé et ce qui nous a permis de devenir un fournisseur de services marketing de premier plan."
+			}
+		},
+		"Services": {
+			"Hero": {
+				"heading": "Des services adaptés aux besoins de votre entreprise",
+				"description": "Découvrez comment nos services complets de marketing, de communication et de publicité peuvent vou aider à atteindre vos objectifs.",
+				"cta": "Explorez nos services"
+			}
+		},
+		"Contact": {
+			"Hero": {
+				"heading": "Prenons contact et discutons de votre projet",
+				"description": "Nous aimerions connaître vos objectifs commerciaux. Prenez contact avec nous pour une consultation gratuite dès aujourd'hui."
+			},
+			"Form": {
+				"heading": "Prenez contact et discutons de votre projet"
+			},
+			"Info": {
+				"heading": "Retrouvez-nous ici"
+			}
+		},
+		"Blog": {
+			"Hero": {
+				"heading": "Restez à l'avant-garde grâce aux nouvelles de marketing",
+				"description": "Explorez notre blog pour découvrir les tendances du secteur, les astuces marketing et les conseils d'experts afin de rester informé et inspiré."
+			}
+		},
+		"Cases": {
+			"Hero": {
+				"heading": "Voyez comment nous obtenons des résultats",
+				"description": "Plongez dans nos études de cas pour découvrir comment nous avons aidé des entreprises comme la vôtre à atteindre un succès remarquable."
+			}
+		},
+		"Portfolio": {
+			"Hero": {
+				"heading": "Présentation de notre travail et de notre créativité",
+				"description": "Parcourez notre portfolio pour avoir un aperçu de notre approche créative et des résultats probants que nous obtenons."
+			}
+		},
+		"CTA": {
+			"start": "Parlons-en"
 		}
 	}
 }

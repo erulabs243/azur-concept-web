@@ -28,10 +28,10 @@ export default async function Page({ params }: Props) {
 		<main>
 			<Hero
 				heading={cover?.heading ?? t("heading")}
-				subheading={{ label: "Check our services", link: "/services" }}
+				subheading={{ label: t("subheading"), link: "/services" }}
 				image={cover?.cover ?? "/bg.jpg"}
 				description={cover?.description ?? t("description")}
-				cta={{ link: "/contact", label: "Let's talk" }}
+				cta={{ link: "/contact", label: t("cta") }}
 			/>
 
 			{/* Categories */}
