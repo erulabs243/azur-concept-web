@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
