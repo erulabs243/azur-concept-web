@@ -282,7 +282,6 @@ export interface Message {
   name: string;
   email?: string | null;
   phone?: string | null;
-  whatsapp?: boolean | null;
   subject: string;
   message: string;
   read?: boolean | null;

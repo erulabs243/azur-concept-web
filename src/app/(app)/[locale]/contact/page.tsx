@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Phone } from "lucide-react";
+import { LucideMail, MapPin, Phone } from "lucide-react";
 
 import { getCover } from "../../_api/covers";
 import { fetchConfiguration } from "../../_api/globals";
@@ -8,6 +8,7 @@ import { generateSeo } from "@/utils/seo";
 import { setMetaImage, getPreviousOgImages } from "@/utils/meta-image";
 import type { LocaleParams } from "@/types";
 import { Hero } from "@/components/sections";
+import ContactForm from "@/components/contact";
 
 interface Props {
 	params: {
@@ -45,14 +46,46 @@ export default async function Page({ params }: Props) {
 										Un petit texte sur ou les retrouver ou comment les appeler
 									</p>
 								</header>
-								<div className="space-y-2">
+								<div className="space-y-6">
 									{configuration?.phone_numbers &&
 										configuration?.phone_numbers?.length > 0 && (
-											<div className="flex flex-row gap-4">
-												<Phone className="size-6" />
-												<div className="flex-grow">
+											<div className="flex flex-row items-start gap-4">
+												<div className="rounded-box border border-neutral/50 p-2">
+													<Phone className="size-6" />
+												</div>
+												<div className="flex-grow space-y-1 pt-2">
 													{configuration?.phone_numbers?.map((phone) => (
 														<p key={phone.id}>{phone.phone}</p>
+													))}
+												</div>
+											</div>
+										)}
+									{configuration?.emails && configuration.emails.length > 0 && (
+										<div className="flex flex-row gap-4 items-start">
+											<div className="rounded-box border border-neutral/50 p-2">
+												<LucideMail className="size-6" />
+											</div>
+											<div className="flex-grow pt-2 space-y-1">
+												{configuration.emails.map((email) => (
+													<p key={email.id}>{email.email}</p>
+												))}
+											</div>
+										</div>
+									)}
+									{configuration?.addresses &&
+										configuration?.addresses?.length > 0 && (
+											<div className="flex flex-row gap-4 items-start">
+												<div className="rounded-box border border-neutral/50 p-2">
+													<MapPin className="size-6" />
+												</div>
+												<div className="flex-grow pt-2 space-y-1">
+													{configuration?.addresses?.map((address) => (
+														<div key={address.id}>
+															<p className="font-semibold">
+																{`${address?.address}, ${address?.city}`}
+															</p>
+															<p className="text-sm text-neutral-700">{`${address?.province}, ${address?.country}`}</p>
+														</div>
 													))}
 												</div>
 											</div>
@@ -65,6 +98,9 @@ export default async function Page({ params }: Props) {
 										{t("Form.heading")}
 									</h6>
 								</header>
+								<div>
+									<ContactForm />
+								</div>
 							</div>
 						</div>
 					</div>

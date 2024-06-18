@@ -22,12 +22,6 @@ export const Messages = {
 					name: "phone",
 					type: "text",
 				},
-				{
-					name: "whatsapp",
-					type: "checkbox",
-					label: "Call me on WhatsApp",
-					defaultValue: false,
-				},
 			],
 		},
 		{
