@@ -17,6 +17,8 @@ export const Covers = {
 				{ label: "About", value: "about" },
 				{ label: "Contact", value: "contact" },
 				{ label: "Blog", value: "blog" },
+				{ label: "Portfolio", value: "portfolio" },
+				{ label: "FAQ", value: "faq" },
 			],
 			required: true,
 			unique: true,

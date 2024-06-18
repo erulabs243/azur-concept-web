@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import type { Metadata, ResolvingMetadata } from "next";
 
 import type { LocaleParams } from "@/types";
 import { Hero } from "@/components/sections";
@@ -12,6 +13,9 @@ import {
 	GetStarted,
 } from "./_components";
 import { getCover } from "../_api/covers";
+import { fetchConfiguration } from "../_api/globals";
+import { getPreviousOgImages, setMetaImage } from "@/utils/meta-image";
+import { generateSeo } from "@/utils/seo";
 
 interface Props {
 	params: {
@@ -56,4 +60,34 @@ export default async function Page({ params }: Props) {
 			<GetStarted />
 		</main>
 	);
+}
+
+/**
+ * Metadata
+ */
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata,
+): Promise<Metadata> {
+	const { locale } = params;
+	const t = await getTranslations("App.Home.Hero");
+	const coverData = await getCover({ page: "home", lang: locale });
+	const configurationData = await fetchConfiguration({ lang: locale });
+
+	const [cover, configuration] = await Promise.all([
+		coverData,
+		configurationData,
+	]);
+
+	const seo = generateSeo(configuration, cover?.heading, cover?.description);
+
+	return {
+		...seo,
+		openGraph: {
+			images: [
+				setMetaImage(cover?.cover),
+				...(await getPreviousOgImages(parent)),
+			],
+		},
+	};
 }
