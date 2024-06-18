@@ -39,7 +39,7 @@ export const Covers = {
 			name: "cover",
 			type: "upload",
 			relationTo: Media.slug,
-			required: true,
+			// required: true,
 		},
 	],
 } satisfies CollectionConfig;

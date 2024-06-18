@@ -39,7 +39,6 @@ export const Posts = {
 							name: "cover",
 							type: "upload",
 							relationTo: Media.slug,
-							required: true,
 						},
 						{
 							name: "excerpt",
