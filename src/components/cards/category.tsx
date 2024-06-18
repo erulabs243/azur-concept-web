@@ -11,16 +11,18 @@ type Props = {
 export const Category: React.FC<Props> = ({ category }) => {
 	return (
 		<div className="card w-full lg:max-w-96 border group hover:cursor-pointer border-neutral rounded-box hover:border-none hover:bg-primary/30 transition-all duration-500 ease-in-out p-4">
-			{category.cover && (
-				<Link
-					href={{
-						pathname: "/services/[slug]",
-						params: { slug: category.id },
-					}}
-				>
+			<Link
+				href={{
+					pathname: "/services/[slug]",
+					params: { slug: category.id },
+				}}
+			>
+				{category.cover ? (
 					<ImageCard media={category.cover} />
-				</Link>
-			)}
+				) : (
+					<ImageCard media="/placeholder.jpg" />
+				)}
+			</Link>
 			<div className="card-body p-0 mt-2 flex flex-col justify-between">
 				<div>
 					<Link

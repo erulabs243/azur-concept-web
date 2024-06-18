@@ -42,7 +42,7 @@ const Hero: React.FC<Props> = ({
 }) => {
 	return (
 		<div className="min-h-[60vh] lg:min-h-[70vh] bg-primary flex flex-col justify-center relative">
-			{image && (
+			{image ? (
 				<div className="absolute top-0 w-full h-full overflow-hidden brightness-50">
 					{typeof image === "string" ? (
 						<Image
@@ -61,6 +61,15 @@ const Hero: React.FC<Props> = ({
 							className="w-full h-full object-cover"
 						/>
 					)}
+				</div>
+			) : (
+				<div className="absolute top-0 w-full overflow-hidden brightness-50">
+					<Image
+						src="/placeholder.jpg"
+						width={4096}
+						height={4096}
+						className="w-full object-cover h-full"
+					/>
 				</div>
 			)}
 			<div className="container z-10 py-24 px-8">

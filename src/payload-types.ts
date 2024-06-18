@@ -132,9 +132,10 @@ export interface ServiceCategory {
 export interface Post {
   id: string;
   title: string;
-  cover: string | Media;
+  cover?: string | Media | null;
   excerpt: string;
   categories?: (string | PostCategory)[] | null;
+  related?: (string | Post)[] | null;
   content: {
     root: {
       type: string;
@@ -329,10 +330,10 @@ export interface Statistics {
  */
 export interface Cover {
   id: string;
-  page: 'home' | 'service' | 'about' | 'contact' | 'blog';
+  page: 'home' | 'service' | 'about' | 'contact' | 'blog' | 'portfolio' | 'faq';
   heading: string;
   description: string;
-  cover: string | Media;
+  cover?: string | Media | null;
   updatedAt: string;
   createdAt: string;
 }

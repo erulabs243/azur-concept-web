@@ -14,7 +14,7 @@ export default async function Blog({ locale }: { locale?: LocaleParams }) {
 	return (
 		<section className="py-12 md:py-24 px-4 container space-y-8">
 			<header className="flex flex-col lg:flex-row gap-4 px-4 lg:px-12">
-				<div className="flex-grow">
+				<div className="w-full lg:w-1/2 px-0 lg:pr-24">
 					<h4 className="section-heading">{t("heading")}</h4>
 					<p className="section-description">{t("description")}</p>
 				</div>

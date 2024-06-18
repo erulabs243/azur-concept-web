@@ -13,7 +13,7 @@ const Values: React.FC = () => {
 				<div className="w-full lg:w-2/5 items-center justify-end h-[50vh] hidden lg:flex overflow-hidden">
 					<figure className="rounded-box overflow-hidden shadow-sm">
 						<Image
-							src="/portrait.jpg"
+							src="/placeholder.jpg"
 							alt="Image de portrait"
 							width={360}
 							height={480}

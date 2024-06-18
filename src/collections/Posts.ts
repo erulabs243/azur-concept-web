@@ -54,6 +54,19 @@ export const Posts = {
 							hasMany: true,
 							label: "Categories",
 						},
+						{
+							name: "related",
+							type: "relationship",
+							relationTo: "posts",
+							hasMany: true,
+							filterOptions: ({ id }) => {
+								return {
+									id: {
+										not_in: [id],
+									},
+								};
+							},
+						},
 					],
 				},
 				{
