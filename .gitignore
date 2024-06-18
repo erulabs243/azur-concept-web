@@ -41,4 +41,5 @@ next-env.d.ts
 .env
 
 /media
-/public
+/public/media
+/public/local
